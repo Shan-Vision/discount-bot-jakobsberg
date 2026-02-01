@@ -8,8 +8,12 @@ from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-load_dotenv()
+
 TOKEN = os.getenv('BOT_TOKEN')
+if not TOKEN:
+    print('❌ BOT_TOKEN не найден!')
+    exit(1)
+print(f'✅ TOKEN OK: {TOKEN[:10]}...')
 PRODUCTS_FILE = 'products.json'
 STORES = {
     '🟠 Willys Jakobsberg (Nettovägen 2)': 'https://www.willys.se/erbjudanden/ehandel',
