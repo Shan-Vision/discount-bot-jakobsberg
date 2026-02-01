@@ -4,11 +4,11 @@ import json
 import requests
 import asyncio
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-load_dotenv(find_dotenv())
+load_dotenv()
 TOKEN = os.getenv('BOT_TOKEN')
 PRODUCTS_FILE = 'products.json'
 STORES = {
